@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{job.title}} - JobScope</title>
+    <style>
+        /* Styling for the entire body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling for the container element */
+        .container {
+            max-width: 800px;
+            margin: 80px auto 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Styling for the heading element */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the sub-heading element */
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for the paragraph element */
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Styling for the navigation bar brand */
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Styling for the banner */
+        .banner {
+            background-image: url('/static/banner.jpg');
+            background-size: cover;
+            background-position: center top;
+            height: 600px; /* Adjust this value as needed */
+            margin: 0 ;
+        }
+
+        /* Styling for the job information */
+        .job-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <!-- Navigation bar brand with logo and name -->
+    <a class="navbar-brand" href="/">
+        <img alt="" class="d-inline-block align-text-top" height="24" src="/static/logo.svg" width="30">
+        JobScope
+    </a>
+</nav>
+
+<!-- Banner with background image -->
+<div class="banner"></div>
+
+<!-- Main content container -->
+<div class="container">
+    <!-- Job information -->
+    <div class="job-info">
+        <!-- Job title -->
+        <h1>{{job.title}}</h1>
+
+        <!-- Location information -->
+        <h3>Location</h3>
+        <p>{{job[0].location}}</p>
+
+        <!-- Salary information -->
+        <h3>Salary</h3>
+        <p>{{job[0].currency}}{{job[0].salary}}</p>
+
+        <!-- Responsibilities information -->
+        <h3>Responsibilities</h3>
+        <p>{{job[0].responsibities}}</p>
+
+        <!-- Requirements information -->
+        <h3>Requirements</h3>
+        <p>{{job[0].requirments}}</p>
+    </div>
+
+    <!-- Application form -->
+    {% include 'application_form.html' %}
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>
+
